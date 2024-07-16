@@ -1,0 +1,94 @@
+                    CSE 260, Parallel Computation
+                            (Spring 2024)
+           Department of Computer Science and Engineering 	
+                 University of California, San Diego 	
+
+
+		Team Self Evaluation Form, Assignment #1
+
+Each team must submit one copy of this self evaluation form. 
+The members of each team should discuss how they
+worked together and what to write for the evaluation.
+If you worked alone leave column B blank
+
+(1) List the names of your team members:
+
+A: Yichi Yang
+
+ 
+B: Chihao Yu
+
+ 
+ 
+(2) Estimate how much time each team member devoted to this project, in HOURS.
+
+  	                        A 	       B
+meetings 	  	  	        2      2
+coding 	  	  	            8          8
+writeup 	  	  	        6      7
+planning (alone) 	  	  	2      3
+total (including meetings) 	18  	      20
+
+
+(3) Discuss the following.
+(a) If you worked in a team, what were the major responsibilities
+    of each team member?
+
+    Yichi
+    - Implemented packing
+    - Implemented various kernels
+        - bl_dgemm_ukr_sve_4x4
+        - bl_dgemm_ukr_sve_4x4_alternative
+        - bl_dgemm_ukr_sve_8x4
+        - bl_dgemm_ukr_sve_4x4_butterfly
+        - bl_dgemm_ukr_sve_4x8
+        - bl_dgemm_ukr_sve_4x12
+    - Did some manual tuning & automatic parameter search
+    - Wrote Q1, Q2c, Q2e; parts of Q2b, Q2d
+     Chihao Yu
+     -implement bl_dgemm_ukr_sve_2x4 kernel
+     -improve packing to have unrolling(although it turns out not improving performance)
+     -Using sciprt file to find the best set of paramaters
+     -Wrote Q2a, parts of Q2bQ2d
+     -improce every kernel mentioned through loop unrolling, restrict pointers,
+     -testing the cache miss percentage
+
+(b) Did you complete the assignment?
+Yes.
+
+(c) What were your major strengths and weaknesses in doing this
+    assignment (individually or in a team)?
+    If in a team, also discuss how your team worked together.
+
+    Yichi
+    - I'm familiar with computer architecture concepts, but this is my first
+      time working with the ARM instruction set (I'm more familiar with
+      x86_64), so it took me some time (reading documentation) to get started.
+     Chihao Yu:
+	Last time I studies computer architecture is a year ago, so it takes me some
+time to bve familiar wih the concepts. And my strength is I am always eager to learn 
+and ask my teammate questions when I do not understand.
+    
+
+How we worked as a team:
+    - We mostly collaborated online. We independently come up with
+      new ideas to try, try them out, and then share and analyze
+      the results together. For the parameter search / profiling
+      part we aligned on what data we need to collect and each of
+      us ran parts of the experiment so we can collect data faster.
+
+(d) What  lessons did you learn from these events.
+Yichi - the SVE instruction set, how to profile programs and measure caching behavior
+Chihao - the SVE instruction set, how to do the packing and various kernels and how to tune the parameter
+
+(e) If in a team, whether and how you plan to change the way
+    your work together .
+Yichi - I think we are a good team. There's nothing I plan to change.
+Chihao Yu - I think overall we did really well
+
+(f) Anything else that comes to mind.
+Yichi - I don't have additional comments.
+Chihao - I don't have additional comments.
+
+(g) What suggestions do you have to improve this assignment?
+Yichi - I don't have specific suggestions but I like how many questions are open ended.
